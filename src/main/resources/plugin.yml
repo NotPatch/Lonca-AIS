@@ -1,0 +1,9 @@
+name: Lonca
+version: '1.0-SNAPSHOT'
+main: com.notpatch.loncaAIS.Lonca
+api-version: '1.16'
+authors: [ NotPatch ]
+
+commands:
+  lonca:
+  loncaadmin:

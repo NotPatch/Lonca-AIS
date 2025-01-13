@@ -1,0 +1,43 @@
+prefix: "#FCD05CLonca &7» "
+create-cost: 5000
+
+stars:
+  50: "&a★★★★"
+  45: "&a★★★"
+  25: "&a★★"
+
+#Available placeholders: %lonca_guild_name%, %lonca_guild_leader%, %lonca_guild_star%, %lonca_guild_rating%
+messages:
+  help:
+    - ""
+    - "#084CFB/lonca oluştur [isim] &7- #ADF3FDYeni bir lonca oluşturur."
+    - "#084CFB/lonca davet [oyuncu] &7- #ADF3FDBir oyuncuyu loncaya davet eder."
+    - "#084CFB/lonca katıl [lonca] &7- #ADF3FDBir lonca davetini kabul eder."
+    - "#084CFB/lonca at [oyuncu] &7- #ADF3FDLoncadan bir oyuncuyu atar."
+    - "#084CFB/lonca ayrıl &7- #ADF3FDLoncadan ayrılırsınız."
+    - "#084CFB/lonca bilgi [lonca] &7- #ADF3FDLonca hakkında bilgi alırsınız."
+    - ""
+  info:
+    - ""
+    - "#ADF3FDLonca: #FCD05C%guild%"
+    - "#ADF3FDLider: #FCD05C%leader%"
+    - "#ADF3FDÜyeler: #FCD05C%members%"
+    - "#ADF3FDYıldız: #FCD05C%rating%"
+    - ""
+  already-in-guild: "&cZaten bir lonca üyesisiniz."
+  not-enough-money: "&cLonca oluşturmak için yeterli paranız yok."
+  not-in-guild: "&cBu komutu kullanabilmek için bir lonca üyesi olmalısınız."
+  dont-have-permission: "&cBu komutu kullanabilmek için gerekli izinlere sahip değilsiniz."
+  target-not-found: "&cHedef oyuncu bulunamadı."
+  player-is-in-guild: "&cBu oyuncu zaten bir loncanın üyesi."
+  player-is-not-in-guild: "&cBu oyuncu bir loncanın üyesi değil."
+  player-kicked: "&aOyuncu başarıyla loncadan atıldı."
+  guild-not-found: "&cLonca bulunamadı."
+  no-invitation: "&cBu loncaya davet edilmediniz."
+  joined-guild: "&aLoncaya başarıyla katıldınız."
+  invite-send: "&aOyuncu başarıyla loncaya davet edildi."
+  invite-received: "&a%guild% Adlı loncaya davet edildin."
+  cant-attack: "&cLonca üyesine saldıramazsın!"
+  left-guild: "&aLoncadan başarıyla ayrıldınız."
+  you-cant: "&cBu komutu kullanamazsınız."
+  guild-created: "&aLonca başarıyla oluşturuldu."
