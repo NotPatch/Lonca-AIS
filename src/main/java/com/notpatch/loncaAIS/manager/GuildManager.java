@@ -1,6 +1,7 @@
 package com.notpatch.loncaAIS.manager;
 
 import com.notpatch.loncaAIS.Lonca;
+import com.notpatch.loncaAIS.configuration.impl.GuildData;
 import com.notpatch.loncaAIS.model.Guild;
 import org.bukkit.configuration.Configuration;
 import org.bukkit.entity.Player;
@@ -43,6 +44,12 @@ public class GuildManager {
         Configuration configuration = lonca.getConfig();
         int level = guild.getLevel();
         for(String line : configuration.getConfigurationSection("stars").getKeys(false)){
+            if(line.contains("-")){
+                String[] split = line.split("-");
+                if(level >= Integer.parseInt(split[0]) && level <= Integer.parseInt(split[1])){
+                    return configuration.getString("stars." + line);
+                }
+            }
             if(level >= Integer.parseInt(line)){
                 return configuration.getString("stars." + line);
             }
@@ -59,6 +66,9 @@ public class GuildManager {
     }
 
     public void removeGuild(Guild guild) {
+        GuildData guildData = Lonca.getInstance().getConfigurationManager().getGuildData();
+        guildData.getConfiguration().set("guilds." + guild.getId(), null);
+        guildData.saveConfiguration();
         guilds.remove(guild);
     }
 

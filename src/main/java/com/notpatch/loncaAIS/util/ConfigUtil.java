@@ -26,14 +26,30 @@ public class ConfigUtil {
     }
 
     public static void sendInfoMessage(Player p, Guild guild){
+        if(guild == null){
+            return;
+        }
         for(String message : Lonca.getInstance().getConfig().getStringList("messages.info")){
             List<UUID> members = guild.getMembers();
             List<String> memberNames = new ArrayList<>();
+
+
+
             for(UUID member : members){
+                if(Bukkit.getPlayer(member) == null){
+                    continue;
+                }
                 memberNames.add(Bukkit.getPlayer(member).getName());
             }
-            p.sendMessage(getColored(message).replace("%guild%", guild.getName()).replace("%rating%", String.valueOf(guild.getLevel())).replace("%members%", memberNames.toString()).replace("%leader%", String.valueOf(Bukkit.getPlayer(guild.getLeader()).getName())));
+            p.sendMessage(getColored(message).replace("%guild%", guild.getName()).replace("%rating%", String.valueOf(guild.getLevel())).replace("%members%", memberNames.toString()).replace("%leader%", Bukkit.getPlayer(guild.getLeader()).getName()));
         }
+    }
+
+    public static String getRankingMessage(Guild guild, int rank){
+        if(guild != null){
+            return getColored(config.getString("messages.ranking")).replace("%guild%", guild.getName()).replace("%kdr%", String.valueOf(guild.getTotalKDR())).replace("%order%", String.valueOf(rank));
+        }
+        return "";
     }
 
     public static void sendMessage(Player p, String message){
@@ -41,6 +57,9 @@ public class ConfigUtil {
     }
 
     public static String getMessage(String message, Guild guild){
+        if(guild == null){
+            return "";
+        }
         return getColored(getColored(config.getString("prefix")) + config.getString("messages." + message)).replaceAll("%guild%", guild.getName());
     }
 

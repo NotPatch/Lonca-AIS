@@ -5,6 +5,7 @@ stars:
   50: "&a★★★★"
   45: "&a★★★"
   25: "&a★★"
+  0-24: "&a★"
 
 #Available placeholders: %lonca_guild_name%, %lonca_guild_leader%, %lonca_guild_star%, %lonca_guild_rating%
 messages:
@@ -24,6 +25,7 @@ messages:
     - "#ADF3FDÜyeler: #FCD05C%members%"
     - "#ADF3FDYıldız: #FCD05C%rating%"
     - ""
+  ranking: "#ADF3FD%order%. #FCD05C%guild% - #FCD05C%kdr%"
   already-in-guild: "&cZaten bir lonca üyesisiniz."
   not-enough-money: "&cLonca oluşturmak için yeterli paranız yok."
   not-in-guild: "&cBu komutu kullanabilmek için bir lonca üyesi olmalısınız."
@@ -36,8 +38,10 @@ messages:
   no-invitation: "&cBu loncaya davet edilmediniz."
   joined-guild: "&aLoncaya başarıyla katıldınız."
   invite-send: "&aOyuncu başarıyla loncaya davet edildi."
-  invite-received: "&a%guild% Adlı loncaya davet edildin."
+  invite-received: "&a%guild% Adlı loncaya davet edildin. /lonca katıl %guild%"
   cant-attack: "&cLonca üyesine saldıramazsın!"
   left-guild: "&aLoncadan başarıyla ayrıldınız."
   you-cant: "&cBu komutu kullanamazsınız."
   guild-created: "&aLonca başarıyla oluşturuldu."
+  leader-changed: "&aLonca başarıyla devredildi."
+  confirm-action: "&aEylemi onaylamak için tekrar yazın."

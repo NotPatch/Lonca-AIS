@@ -56,6 +56,10 @@ public class Guild {
         return level;
     }
 
+    public void setLeader(UUID leader) {
+        this.leader = leader;
+    }
+
     public boolean isMember(UUID player) {
         return members.contains(player) || leader.equals(player);
     }
@@ -68,6 +72,12 @@ public class Guild {
         int kills = 0;
         int deaths = 0;
         for(UUID p : getMembers()){
+            if(p == null){
+                continue;
+            }
+            if(Bukkit.getPlayer(p) == null){
+                continue;
+            }
             kills += Bukkit.getPlayer(p).getStatistic(Statistic.PLAYER_KILLS);
             deaths += Bukkit.getPlayer(p).getStatistic(Statistic.DEATHS);
         }
